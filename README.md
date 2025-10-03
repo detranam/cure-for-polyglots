@@ -30,8 +30,14 @@ I will also note that I regularly develop in C and C++, and have dabbled in Pyth
 
 # Tests
 
-* Standard recursive function calls (10^(0,1,2,3,4,5,6) calls with arbitrary functionality inside)
+* ~~Standard recursive function calls (10^(0,1,2,3,4,5,6) calls with arbitrary functionality inside)~~ Found out that [someone else](https://github.com/drujensen/fib/tree/main) did a far more comprehensive test on this than I did, I'll rely on their data.
 * Multithreading functionality (execution time, memory usage)
 * Parsing of large text file
 * Concatenation of large strings
 * Some sort of built-in memory torture test (stack/queue push and pop, etc)
+* Large dependency structure (for compile time)
+
+# Potential Benchmarking Tools
+
+* [cmdbench](https://pypi.org/project/cmdbench/)
+* [hyperfine](https://github.com/sharkdp/hyperfine)
