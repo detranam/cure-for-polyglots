@@ -21,6 +21,7 @@ void incrementCounter()
 int main(int argc, char *argv[]){
     // Intend to be called like ./multithread_counter 5
     int threadCount = std::atoi(argv[argc-1]);
+    std::cout << "Counting to " << countTo << " with " << threadCount << " threads.";
 
     std::vector<std::thread> threads;
     for (int i = 0; i < threadCount; i++)

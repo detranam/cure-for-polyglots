@@ -5,11 +5,11 @@ fn main() {
     println!("Testing a push/pop with {} allocated items.", pushed_items);
 
     let mut myvec: Vec<String> = vec![];
-    for n in 1..pushed_items {
+    for n in 0..pushed_items {
         myvec.push(n.to_string());
     }
 
-    for _ in 1..pushed_items {
+    for _ in 0..pushed_items {
         myvec.pop();
     }
 }
