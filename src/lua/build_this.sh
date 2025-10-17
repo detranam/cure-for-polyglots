@@ -2,6 +2,7 @@ lsDirectories="$(ls *.lua)"
 directories=($lsDirectories)
 
 mkdir build
+cp ../../test-materials/testwords.txt ./
 
 for luafile in "${directories[@]}"
 do
