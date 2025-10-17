@@ -10,4 +10,4 @@ cargo build
 ```
 
 ## Executable Location
-project/target/<debug or release>/
+project/target/\<debug or release\>/
