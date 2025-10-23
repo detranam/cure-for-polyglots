@@ -19,3 +19,6 @@ Another note on Lua is that there isn't a code size benefit to using luac (the c
 
 ### LuaJIT
 LuaJIT seems to be the best way to get even more performant Lua code. I haven't investigated it yet, but once all the tests are written, I'll look into how much overhead / benefit there is to using LuaJIT.
+
+## Retrospective on Lua With Regard to Other Languages
+When I started writing the tests for Lua, I hadn't looked very hard at the language's standard library. It does not have any built in memory safety options, and by default runs in a single thread (concurrency, not parallelism). This makes it hard to write the same tests that I've put other lanugages through. I don't view this as a weakness of the language- it seems tied closely enough to C / C++ that you have all the tools you'd need to implement threads/parallelism, but as a part of this testing I do not plan on doing that.
