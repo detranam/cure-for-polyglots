@@ -3,10 +3,10 @@ directories=($lsDirectories)
 
 for dir in "${directories[@]}"
 do
-    echo Building rust program in $dir
+    echo Building go program in $dir
     cd $dir
-    cargo fmt
-    cargo build
+    go fmt
+    go build "$(ls *.go)"
     cd ..
 done
 

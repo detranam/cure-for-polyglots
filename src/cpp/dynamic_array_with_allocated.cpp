@@ -8,12 +8,15 @@ int main(int argc, char *argv[]){
     std::cout << "Testing a push/pop with " << pushedItems << " allocated items.\n";
 
     std::vector<std::string> myvec {};
+    int totalCharCount = 0;
     for (int i = 0; i < pushedItems; i++)
     {
         myvec.push_back(std::string{std::to_string(i)});
     }
     for (auto i : myvec)
     {
+        totalCharCount += myvec.back().size();
         myvec.pop_back();
     }
+    std::cout << "There were " << totalCharCount << " characters written.\n";
 }

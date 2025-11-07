@@ -18,8 +18,8 @@ add_executable(multithread_counter multithread_counter.cpp)
 # Count to n million with n threads with an atomic int (not a standard test)
 add_executable(multithread_counter_atomic multithread_counter_atomic.cpp)
 
-# Push back n builting items
+# Push back n builtin items
 add_executable(dynamic_array_with_builtin dynamic_array_with_builtin.cpp)
 
-# Push back n builting items
+# Push back n allocated items
 add_executable(dynamic_array_with_allocated dynamic_array_with_allocated.cpp)
