@@ -7,12 +7,18 @@ int main(int argc, char *argv[]){
     std::cout << "Testing a push/pop with " << pushedItems << " builtin items.\n";
 
     std::vector<int> myvec {};
+    int evenNumberCount = 0;
     for (int i = 0; i < pushedItems; i++)
     {
         myvec.push_back(i);
     }
     for (auto i : myvec)
     {
+        if (myvec.back() %2 == 0)
+        {
+            evenNumberCount++;
+        }
         myvec.pop_back();
     }
+    std::cout << "There were " << evenNumberCount << " even numbers.\n";
 }

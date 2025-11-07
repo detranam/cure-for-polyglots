@@ -4,12 +4,15 @@ fn main() {
         .unwrap();
     println!("Testing a push/pop with {} allocated items.", pushed_items);
 
+    let mut charcount = 0;
     let mut myvec: Vec<String> = vec![];
     for n in 0..pushed_items {
         myvec.push(n.to_string());
     }
 
     for _ in 0..pushed_items {
-        myvec.pop();
+        let thisstr: String = myvec.pop().unwrap();
+        charcount += thisstr.len();
     }
+    println!("There were {} characters written.", charcount);
 }
