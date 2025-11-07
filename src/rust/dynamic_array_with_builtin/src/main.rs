@@ -12,7 +12,7 @@ fn main() {
 
     for _ in 0..pushed_items {
         let thisint: i32 = myvec.pop().unwrap();
-        if thisint%2 == 0 {
+        if thisint % 2 == 0 {
             evennumbercount += 1;
         }
     }

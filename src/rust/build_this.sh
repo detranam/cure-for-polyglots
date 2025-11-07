@@ -3,7 +3,7 @@ directories=($lsDirectories)
 
 for dir in "${directories[@]}"
 do
-    Builting rust program in $dir
+    echo Building rust program in $dir
     cd $dir
     cargo fmt
     cargo build
