@@ -41,3 +41,5 @@ I will also note that I regularly develop in C and C++, and have dabbled in Pyth
 
 * [cmdbench](https://pypi.org/project/cmdbench/)
 * [hyperfine](https://github.com/sharkdp/hyperfine)
+* [memusage](https://manpages.ubuntu.com/manpages/xenial/man1/memusage.1.html)
+* [heaptrack](https://manpages.ubuntu.com/manpages/xenial/man1/memusage.1.html)
