@@ -43,3 +43,17 @@ I will also note that I regularly develop in C and C++, and have dabbled in Pyth
 * [hyperfine](https://github.com/sharkdp/hyperfine)
 * [memusage](https://manpages.ubuntu.com/manpages/xenial/man1/memusage.1.html)
 * [heaptrack](https://manpages.ubuntu.com/manpages/xenial/man1/memusage.1.html)
+
+## Benchmarking Tools in Practice
+
+Looking into the actual use case of each tool, I've settled on two of them for now.
+
+### hyperfine
+
+hyperfine will be used to benchmark build times. It allows a 'prepare' parameter that allows for testing 'cold cache' behavior.  
+Example: hyperfine --export-json 'testwords_build.json' --prepare 'rm -rf target'  'cargo build'
+
+### cmdbench
+
+cmdbench will be used for runtime memory analysis. It can create nice PNGs, but also allows for JSON output of the memory statistics. I plan on simply capturing the nicely-formatted output of the statistics using '-s'.  
+Example: cmdbench -i 10 -s cargo run
