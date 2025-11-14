@@ -1,4 +1,4 @@
 .vscode/*
 venv/*
-**/*_build.json
-**/*_runtime.txt
+*.json
+*.txt

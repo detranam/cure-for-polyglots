@@ -8,12 +8,12 @@ do
     cd $dir
     cargo fmt
     rm -rf target
-    # Benchmark the building
+    # Benchmark the building without caching
     hyperfine --export-json ${dir::-1}_build.json --prepare 'rm -rf target'  'cargo build'
-    # Benchmark the running
+    # Benchmark the running.
+    # TODO: I shouldn't be using cargo run, it's ~50% slower than just running the executable
     cmdbench -i 10 -s cargo run > ${dir::-1}_runtime.txt
     cd ..
-    exit 1
 done
 
 cp ../../test-materials/testwords.txt print_testwords/

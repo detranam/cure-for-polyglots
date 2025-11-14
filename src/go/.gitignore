@@ -1,5 +1,8 @@
+# Ignore all generated executables
 *
 !/**/
 !*.*
 
-*/testwords.txt
+# Ignore generated benchmark files
+**/*.json
+**/*.txt
