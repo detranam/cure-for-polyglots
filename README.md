@@ -57,3 +57,7 @@ Example: hyperfine --export-json 'testwords_build.json' --prepare 'rm -rf target
 
 cmdbench will be used for runtime memory analysis. It can create nice PNGs, but also allows for JSON output of the memory statistics. I plan on simply capturing the nicely-formatted output of the statistics using '-s'.  
 Example: cmdbench -i 10 -s cargo run
+
+## Visualization Tools
+
+In order to make this project even a bit more complicated, I'll be using Python and matplotlib to visualize much of the data. Since much of the data has a high, low, and average, I was hoping to utilize something like [errorbar](https://matplotlib.org/stable/gallery/statistics/errorbar_features.html#sphx-glr-gallery-statistics-errorbar-features-py) to show the data. As I get closer to the actual visualization, and how I plan on doing it, I'll potentially change which tool I use.
