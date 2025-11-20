@@ -11,15 +11,24 @@ do
     cd $dir
     go fmt
     go clean -cache
+    rm runtime.txt
     # Benchmark the building without caching
-    hyperfine --export-json ${dir::-1}_build_without_caching.json --prepare 'go clean -cache'  'go build'
+    #hyperfine --export-json ${dir::-1}_build_without_caching.json --prepare 'go clean -cache'  'go build'
     # Benchmark the building with caching
     hyperfine --export-json ${dir::-1}_build_with_caching.json 'go build'
     # Benchmark the running.
-    echo "cmdbench -i 10 -s ./${dir::-1} > ${dir::-1}_runtime.txt"
-    cmdbench -i 10 -s ${dir::-1} > ${dir::-1}_runtime.txt
+    for i in {0..10}
+    do
+        echo Run $i >> runtime.txt
+        time_taken="$( { time ./"${dir::-1}" 1>/dev/null; } 2>&1 | tail -n 3 )"
+        echo "$time_taken" >> runtime.txt
+    done
+    #hyperfine --export-json ${dir::-1}_run.json ./${dir::-1}
+    #cmdbench -i 10 -s ${dir::-1} > ${dir::-1}_runtime.txt
+    exit 1
     cd ..
 done
 
-find ./ -name '*.json' -exec cp -prv '{}' 'results' ';'
-find ./ -name '*.txt' -exec cp -prv '{}' 'results' ';'
+# Harvest all data and place into results/
+find ./ -name '*.json' -exec mv '{}' 'results' ';'
+find ./ -name '*.txt' -exec mv '{}' 'results' ';'
